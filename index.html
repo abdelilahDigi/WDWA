@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdelilah Dam - Web Developer Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+    .font-space-grotesk {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .accent-glow {
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6, #ec4899);
+      filter: blur(40px);
+      opacity: 0.15;
+    }
+
+    /* Hero animations */
+    @keyframes float-down {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float-up {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 40px rgba(6, 182, 212, 0.8);
+      }
+    }
+
+    .hero-title {
+      animation: float-down 0.8s ease-out;
+    }
+
+    .hero-subtitle {
+      animation: float-down 0.8s ease-out 0.2s both;
+    }
+
+    .hero-text {
+      animation: float-up 0.8s ease-out 0.4s both;
+    }
+
+    .cta-button {
+      animation: float-up 0.8s ease-out 0.6s both;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #06b6d4, #0891b2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(6, 182, 212, 0.4);
+    }
+
+    .about-card {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      border-radius: 16px;
+      padding: 60px 40px;
+      animation: float-up 1s ease-out 0.3s both;
+    }
+
+    .about-card:hover {
+      border-color: rgba(6, 182, 212, 0.3);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .accent-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+      margin: 0;
+    }
+
+    .scroll-indicator {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(10px);
+      }
+    }
+
+    .text-glow {
+      position: relative;
+    }
+
+    .text-glow::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: blur(8px);
+      opacity: 0.5;
+    }
+  </style>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="font-poppins">
+  <script src="/_sdk/element_sdk.js"></script>
+  <div class="w-full h-full overflow-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <!-- Animated background elements -->
+    <div class="fixed inset-0 pointer-events-none">
+      <div class="accent-glow absolute top-20 right-20 w-96 h-96 rounded-full"></div>
+      <div class="accent-glow absolute bottom-32 left-10 w-80 h-80 rounded-full"
+        style="animation-delay: 2s; animation: pulse 4s ease-in-out infinite;"></div>
+      <div class="accent-glow absolute top-1/2 left-1/2 w-96 h-96 rounded-full"
+        style="animation-delay: 4s; animation: pulse 4s ease-in-out infinite;"></div>
+    </div><!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center px-6 py-20">
+      <div class="max-w-4xl mx-auto text-center z-10"><!-- Decorative accent -->
+        <div class="mb-8 flex justify-center">
+          <div class="inline-block">
+            <div class="h-1 w-16 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></div>
+          </div>
+        </div><!-- Main title -->
+        <h1 id="hero-name" class="hero-title font-space-grotesk text-6xl md:text-8xl font-800 mb-6 tracking-tight"><span
+            class="gradient-text">Abdelilah Dam</span></h1><!-- Job title -->
+        <h2 id="hero-job" class="hero-subtitle font-space-grotesk text-3xl md:text-5xl font-700 mb-8 text-slate-300">Web
+          Developer</h2><!-- Descriptive text -->
+        <p id="hero-description"
+          class="hero-text text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12">I’m a web
+          developer passionate about crafting modern, responsive websites from the ground up. I spend my time bridging
+          the gap between design and high-performance code.</p><!-- CTA Button -->
+        <div class="cta-button"><a href="#about"
+            class="btn-primary inline-block px-10 py-4 bg-cyan-500 text-white font-space-grotesk font-700 rounded-full text-lg transition-all duration-300 hover:shadow-xl">
+            <span id="cta-button-text">Explore My Work</span> </a>
+        </div><!-- Scroll indicator -->
+        <div class="mt-20 scroll-indicator flex justify-center">
+          <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+    </section><!-- About Section -->
+    <section id="about" class="relative py-32 px-6">
+      <div class="max-w-4xl mx-auto z-10"><!-- Section header -->
+        <div class="mb-16">
+          <div class="accent-line mb-6"></div>
+          <h2 id="about-title" class="font-space-grotesk text-5xl md:text-6xl font-800 mb-4">About Me</h2>
+          <p class="text-slate-400 text-lg">Get to know who I am</p>
+        </div><!-- About content card -->
+        <div class="about-card">
+          <p id="about-description" class="text-lg md:text-xl leading-relaxed text-slate-300 mb-8">I'm a passionate web
+            developer with a focus on creating responsive, user-friendly websites and applications. With expertise in
+            modern web technologies, I transform ideas into elegant digital solutions. I love problem-solving, learning
+            new technologies, and collaborating with teams to bring projects to life.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-12 border-t border-slate-700">
+            <div class="space-y-2">
+              <h3 class="font-space-grotesk font-700 text-cyan-400 text-lg">Skills</h3>
+              <ul class="text-slate-400 space-y-2">
+                <li>✨ HTML, CSS, JavaScript, PHP</li>
+                <li>✨ React &amp; Modern Frameworks</li>
+                <li>✨ Responsive Design</li>
+                <li>✨ Problem Solving</li>
+              </ul>
+            </div>
+            <div class="space-y-2">
+              <h3 class="font-space-grotesk font-700 text-purple-400 text-lg">What I Do</h3>
+              <ul class="text-slate-400 space-y-2">
+                <li>🎨 Build beautiful websites</li>
+                <li>🚀 Create web applications</li>
+                <li>⚡ Performance optimization</li>
+              </ul>
+            </div>
+          </div><!-- Contact CTA -->
+          <div class="mt-12 pt-12 border-t border-slate-700 text-center">
+            <p class="text-slate-400 mb-6">Let's work together on your next project</p>
+
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdelilahdam27@gmail.com" target="_blank"
+              class="btn-primary inline-block px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-space-grotesk font-700 rounded-full transition-all duration-300">
+              Get In Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </section><!-- Footer -->
+    <footer class="relative py-12 px-6 border-t border-slate-700">
+      <div class="max-w-4xl mx-auto text-center text-slate-500">
+        <p class="mb-4">© 2024 Abdelilah Dam. All rights reserved.</p>
+        <p class="text-sm">Designed &amp; Built with creativity &amp; passion</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      about_title: "About Me",
+      about_description: "I'm a passionate web developer with a focus on creating responsive, user-friendly websites and applications. With expertise in modern web technologies, I transform ideas into elegant digital solutions. I love problem-solving, learning new technologies, and collaborating with teams to bring projects to life.",
+      cta_text: "Explore My Work"
+    };
+
+    let config = { ...defaultConfig };
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (updatedConfig) => {
+          config = updatedConfig;
+
+          // Update About title
+          const aboutTitle = document.getElementById('about-title');
+          if (aboutTitle) {
+            aboutTitle.textContent = config.about_title || defaultConfig.about_title;
+          }
+
+          // Update About description
+          const aboutDesc = document.getElementById('about-description');
+          if (aboutDesc) {
+            aboutDesc.textContent = config.about_description || defaultConfig.about_description;
+          }
+
+          // Update CTA button text
+          const ctaButton = document.getElementById('cta-button-text');
+          if (ctaButton) {
+            ctaButton.textContent = config.cta_text || defaultConfig.cta_text;
+          }
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['about_title', config.about_title || defaultConfig.about_title],
+          ['about_description', config.about_description || defaultConfig.about_description],
+          ['cta_text', config.cta_text || defaultConfig.cta_text]
+        ])
+      });
+    }
+  </script>
+  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9d1241bfa5f96924',t:'MTc3MTYzNTEwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
